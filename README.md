@@ -1,5 +1,7 @@
 # Javascript Library for Customized Input Forms
 
+**Would like to create organized & beautiful input forms with one line of codes?**<br />
+
 
 Demo App: https://hidden-scrubland-35669.herokuapp.com/landing.html
 
@@ -12,4 +14,3 @@ Some useful functionalities for you:
 - Add input fields with different styles and labels. 
 - Customize the styles of the input fields. 
 - Set animations to the button or input field. 
-        
