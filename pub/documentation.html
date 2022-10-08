@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Input Card Demo</title>
+		
+
+	</head>
+	<body>
+		<h2>InputCard library documentation</h2>
+		<br>
+        <a href="/example1.html">Example</a>
+        <br>
+        <a href="/landing.html">Home Page</a>
+        <br>
+        <h4> Getting Started </h4>
+        <p>This library doesn't require any other module or external files. </p><br>
+        <p>The library has some useful functionalities for you: </p>
+        <ol>
+            <li>Create a form and add background image or background color to it.</li>
+            <li>Cdd an input field, you can select what types of input and labels you want to have. </li>
+            <li>Change some styles of the input and its label.</li>
+            <li>Set an animation to the button or input field. </li>
+        </ol>
+
+        
+        <h4>List of APIs</h4>
+        <p>The first step to use this library is to create the form object in the library. The constructor is InputCardGenerator(). It creates an object by calling the constructor </p>
+        <p>Example --- {const form = new InputCardGenerator()} </p>
+        <br> 
+        <p>In this Library, three internal variables are provided and manipulated, and you can access them by {form.variable}. They are:   </p>
+        <ol>
+            <li><p>cardType: it is a string, to record what type of this form. </p>  
+                <p>It is either "login", "register", "creditCard" or "customize.</p>
+                <p>Each type of form has its own styles and input fields </p>
+            </li>
+            <li><p>inputFields: it is an array, to record all elements' class names in the form. </p>  
+                <p>You can access the classes names to change their styles if you need </p>
+            </li>
+            <li><p>form: it is an html object, the actual DOM object displayed in the web page. </p></li>
+        </ol>
+        
+        <br>
+        <p>Second step, you need to create a form, by calling the function {createCard(cardType,autoAnimation, background, userGiven)}</p>
+        <ul>
+        <li>This function will create a form, and with some styles and input fields exist. </li>
+        <li>The "cardType" argument is a string to select the type of form, with options "login", "register", "creditCard", "customize". </li>
+        <li>The autoAnimation is a boolean value, to select whether you want to give the input fields some animations effect when they are created. If true, the input fields will be set to some animations </li>
+        <li>background is a string, either "img" or "color", is to customize the background image or background color of the form. (only works for customize type) </li>
+        <li>userGiven will be the source of image if the background is "img", and will be the color's name if the background is "color" </li>
+        </ul>
+        <br>
+
+        <p>Next step, you need to add an input field, by calling the function {addInputField(label, type, className, token, nameOnLeft, additionPara)}</p>
+        <ul>
+            <li>This function will create a container, having an icon, a label, and an input field in order. </li>
+            <li>The "label" argument is a string, is the default value in the input field  </li>
+            <li>The "type" argument is what type of input you want it to be. It can be selected from "name", "username", "password", "gender", "typeDate", "chooseDate", "email", "number", "select", "button", and all other value will be a plain text input.  </li>
+            <li>* if the type is "select", you need to give an array of options to the "additionalPara" argument </li>
+            <li>The "className" is required. For each container, it should have different className </li>
+            <li>The "token" is a boolean value. It will display an icon for the input field, if the "token" is true. It will not otherwise. </li>
+            <li>The "nameOnLeft" is the label, between the icon and input field. </li>
+            <li>The "additionalPara" is not required if the "type" is not "select" </li>
+        </ul>
+
+        <br>
+        <p>After the two main functions, you can change some styles by calling the function { changeInputStyle(className,styleObject) } </p>
+        <ul>
+            <li>This function will change some styles of the HTML elements given its class name. ClassName is required</li>
+            <li>styleObject is an object with some attribute you want to change. </li>
+            <li>For example, { styleObject = {size: "large", labelColor:"primary", inputBackgroundColor: "primary", inputTextColor: "primary", border: "primary"}  } </li>
+            <li>Those are the attribute/styles that can be changed, the object you input doesn't include all attributes, only include those you want to change.</li>
+            <li>the values of attribute size are "large", "medium", and "small</li>
+            <li>the values of attribute labelColor, inputBackgroundColor,inputTextColor, border are "primary","secondary", "default", and your prefered input as long as it follows that CSS rules</li>
+        </ul>
+        <br> 
+        <p> You can also change the form's title by calling the function { changeFormTitleStyle (titleObject) } </p>
+        <ul>
+            <li>the titleObject is like the styleObject. The attributes should be "title","titleSize", and "titleColor</li>
+            <li>The value for title is the string you want title to be</li>
+            <li>The values of titleSize are "large", "medium", "small" </li>
+            <li>The values of titleColor are "primary","secondary", "default", and your prefered input as long as it follows that CSS rules </li>
+        </ul>
+
+        <br>
+        <p>In addition, you can give some animations effect to the button elements and input elements, by calling the function { setButtonAnimation(className) } and { setInputAnimation(className, icon) } </p>
+        <ul>
+            <li>For setButtonAnimation, you only need to pass the className of the button </li>
+            <li>For setInputAnimation, you need to pass the className and icon type. When the input field is focused, there will be an icon jumping up and down. The icon argument is to choose which icon you want. </li>
+            <li>The icon argument is a string, and it can be "pencil", "keyboard" and any other input will make it a black dot icon. </li>
+        </ul>
+    </body>
+</html>
